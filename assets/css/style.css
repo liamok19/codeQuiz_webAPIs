@@ -53,3 +53,9 @@ body {
     gap: 100px;
     /* padding: 25px; */
 }
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
