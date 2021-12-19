@@ -1,0 +1,55 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#coding-quiz-game{
+    width: 800px;
+    max-width: 80%;
+    background: pink;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 4px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.btn_grid{
+    display:grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.btn {
+    border: 1px solid white;
+    background: linear-gradient(45deg, #fb7ba186, #fce043bb);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    font-weight: bold;
+    outline: none;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    max-width: 80%;
+    gap: 100px;
+    /* padding: 25px; */
+}
