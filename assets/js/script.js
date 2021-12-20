@@ -1,9 +1,11 @@
 var startButtonEl = document.getElementById('begin_btn');
 var questionBoxEl = document.getElementById('questionBox');
+var quizContainerEl = document.getElementById ('coding-quiz-game');
 var highscoreEl = document.getElementById ('highscore');
 var timerEl = document.getElementById('timer');
 var count = 61;
 
+quizContainerEl.style.display = 'none';
 
 startButtonEl.addEventListener('click', function(){
     var timerInterval = setInterval(function(){
@@ -14,12 +16,19 @@ startButtonEl.addEventListener('click', function(){
         if (count === 0) {
             clearInterval(timerInterval);
         }
+        
     }, 1000);
-   var visible = startButtonEl.hidden = true;
-   if (visible === true) {
-    questionBoxEl.hidden = false;
-   }
+
 });
+
+var questionBoxEl01 = document.getElementById('#Question_01')
+console.log(questionBoxEl01)
+
+startButtonEl.addEventListener('click', function(){
+    startButtonEl.style.display = 'none';
+    quizContainerEl.style.display = 'block';
+});
+
 
 
 
