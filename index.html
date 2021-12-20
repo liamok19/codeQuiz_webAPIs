@@ -8,13 +8,20 @@
     <title>Coding Quiz Game LO</title>
 </head>
 <body>
+    <header><strong>Britney Spears Quiz Game noone asked for but now has!</strong></header>
     <section>
-        <div class="header">
-            <div id="highscore">View Highscore
-                
+        <div class="gameHeadBoard">
+            <div> View Highscore
+                <span id="highscore"></span>
             </div>
-            
-            <div id="timer">Countdown Timer</div>
+            <div> Timer
+                <span id="timer"></span>
+            </div> 
+        </div>
+    </section>
+    <section>
+        <div class="navigation">
+            <button id="begin_btn" class="begin_btn btn">Let's Begin</button>
         </div>
     </section>
     <div id="coding-quiz-game">
@@ -26,12 +33,12 @@
                 <button class="btn">Jean</button>
                 <button class="btn">Rose</button>
             </div>
+            <div>
+                <button id="next_btn" class="next_btn btn hide">Next</button>
+            </div>
         </div>
-        <div class="navigation">
-            <button id="begin_btn" class="begin_btn btn">Let's Begin</button>
-            <button id="next_btn" class="next_btn btn hide">Next</button>
-        </div>
-    </div>
+    </div> 
+
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
