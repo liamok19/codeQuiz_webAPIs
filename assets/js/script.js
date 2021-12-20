@@ -1,10 +1,8 @@
-var startButtonEL = document.getElementById('begin_btn');
-var questionBoxEL = document.getElementById('questionBox');
-var highscoreEL = document.getElementById ('highscore');
-var timerEL = document.getElementById('timer');
-
-startButtonEL.addEventListener('click', gameBegins);
-
+var startButtonEl = document.getElementById('begin_btn');
+var questionBoxEl = document.getElementById('questionBox');
+var highscoreEl = document.getElementById ('highscore');
+var timerEl = document.getElementById('timer');
+var count = 61;
 
 
 var questions = [
@@ -18,38 +16,52 @@ var questions = [
         options:["Toxic", "Circus", "Whoopsy Daisy", "Work Bitch"],
         correct: 3, 
     },
+    {
+        question:"What isn't a song sung by Britney Spears?",
+        options:["Toxic", "Circus", "Whoopsy Daisy", "Work Bitch"],
+        correct: 4, 
+    },
+    {
+        question:"What isn't a song sung by Britney Spears?",
+        options:["Toxic", "Circus", "Whoopsy Daisy", "Work Bitch"],
+        correct: 2, 
+    },
 ];
 
 var currentQuestion = 0;
 
-var gameBegins = function(){
+function showQuestion() {
 
-    var timer = 60;
+    var questionObject = questions[currentQuestion];
+        questionBoxEl.innertext = questionObject.question;
+    var answer1El = document("Question_01");
+        answer1El.innertext = questionObject.answers[0];
+    var answer2El = document("Question_02");
+        answer2El.innertext = questionObject.answers[1];
+    var answer3El = document("Question_03");
+        answer3El.innertext = questionObject.answers[2];
+    var answer4El = document("Question_04");
+        answer4El.innertext = questionObject.answers[3];
 
-    var timeInterval = setInterval(function() {
-        time--;
-        timeInterval.textcontent = time;
-
-        if (timer === 0 ) {
-            clearInterval(timeInterval);
-        }
-    },1000);
-
-    function showQuestion() {
-        var questionObject = questions[currentQuestion];
-            questionEl.innertext = questionObject.question;
-            
-
-    }
-
+    choicesEl.appendChild(answer1El);
+    choicesEl.appendChild(answer2El);
+    choicesEl.appendChild(answer3El);
+    choicesEl.appendChild(answer4El);
+    
 
 }
 
-// var timer. Must start at 60 and set to 10milliseconds
+startButtonEl.addEventListener('click', function(){
+    var timerInterval = setInterval(function(){
+        count --;
+        timerEl.textContent = count;
+        console.log('count');
 
-// function gameBegins (){}
-// function nextQuestion (){}
-// function answerSelection() {}
-// build variables. An object conatining an array of the questons 
+        if (count === 0) {
+            clearInterval(timerInterval);
+        }
+    }, 1000);
+});
+
 
 

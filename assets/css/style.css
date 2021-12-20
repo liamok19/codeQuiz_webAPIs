@@ -71,13 +71,24 @@ header {
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-around;
+    font-size: 25px;
 }
 
 #highscore {
-    padding-right: 50vw;
+    padding-right: 65vw;
 }
 
 #begin_btn {
     align-items: center;
     margin-left: 150px;
+    font-size: 50px;
+    border: solid 10px lavender;
+    background: radial-gradient(circle,#fb7ba186, #fce043bb 175%);
+    color: white;
+    
 }
+
+#begin_btn:hover{
+    border-color: #fce0438e ;
+}
+
