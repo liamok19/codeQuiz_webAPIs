@@ -1,9 +1,14 @@
+
 var startButtonEl = document.getElementById('begin_btn');
-var questionBoxEl = document.getElementById('questionBox');
 var quizContainerEl = document.getElementById ('coding-quiz-game');
 var highscoreEl = document.getElementById ('highscore');
 var timerEl = document.getElementById('timer');
 var count = 61;
+
+var questionBoxEl = document.getElementById('questionBox');
+var resultsContainer = document.getElementById('#results')
+var submittedAnswer = document.getElementById ('#Question_01')
+
 
 quizContainerEl.style.display = 'none';
 
@@ -16,20 +21,28 @@ startButtonEl.addEventListener('click', function(){
         if (count === 0) {
             clearInterval(timerInterval);
         }
-        
+
     }, 1000);
 
 });
 
-var questionBoxEl01 = document.getElementById('#Question_01')
-console.log(questionBoxEl01)
-
 startButtonEl.addEventListener('click', function(){
     startButtonEl.style.display = 'none';
     quizContainerEl.style.display = 'block';
+
+
 });
 
+//building the Question portion of the Quiz
+function buildQuiz (){}
 
+function showResults(){}
+
+buildQuiz();
+
+console.log(buildQuiz);
+
+submittedAnswer.addEventListener('click', showResults);
 
 
 
@@ -44,16 +57,6 @@ startButtonEl.addEventListener('click', function(){
 //         options:["Toxic", "Circus", "Whoopsy Daisy", "Work Bitch"],
 //         correct: 3, 
 //     },
-//     {
-//         question:"What isn't a song sung by Britney Spears?",
-//         options:["Toxic", "Circus", "Whoopsy Daisy", "Work Bitch"],
-//         correct: 4, 
-//     },
-//     {
-//         question:"What isn't a song sung by Britney Spears?",
-//         options:["Toxic", "Circus", "Whoopsy Daisy", "Work Bitch"],
-//         correct: 2, 
-//     },
 // ];
 
 // var currentQuestion = 0;
@@ -66,15 +69,10 @@ startButtonEl.addEventListener('click', function(){
 //         answer1El.innertext = questionObject.answers[0];
 //     var answer2El = document("Question_02");
 //         answer2El.innertext = questionObject.answers[1];
-//     var answer3El = document("Question_03");
-//         answer3El.innertext = questionObject.answers[2];
-//     var answer4El = document("Question_04");
-//         answer4El.innertext = questionObject.answers[3];
 
 //     choicesEl.appendChild(answer1El);
 //     choicesEl.appendChild(answer2El);
-//     choicesEl.appendChild(answer3El);
-//     choicesEl.appendChild(answer4El);
+
     
 
 // }
