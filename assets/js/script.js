@@ -25,8 +25,7 @@ startButtonEl.addEventListener('click', function(){
     startButtonEl.style.display = 'none';
     quizContainerEl.style.display = 'block';
 });
-
-    function quizContainerEl() {
+    window.addEventListener("load", function() {
 
         var questionObject = question[currentQuestion];
             questionBoxEl.textContent = questionObject.question;
@@ -35,12 +34,13 @@ startButtonEl.addEventListener('click', function(){
         var answer2El = document.getElementById("#Question_02");
             answer2El.textContent = options[1];
     
-            answer1El.appendChild(answer1El);
-            answer2El.appendChild(answer2El);
+            
+            questionObject.appendChild(answer1El);
+            questionObject.appendChild(answer2El);
+            quizContainerEl.appendChild(questionObject);
+
             console.quizContainerEl();
-
-
-};
+});
 
     //building the Question portion of the Quiz
     //building an array of questions using the object listed 'questions'
@@ -72,5 +72,7 @@ var currentQuestion = 0;
 
 
 
+window.addEventListener("load", function() {
 
+});
 
