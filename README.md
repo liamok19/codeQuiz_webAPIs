@@ -30,13 +30,13 @@ Acceptance Criteria:
 | Build HTML, CSS and JS      | Complete | 
 | Link above files to HTML | Complete |
 | Build start Button to begin Game. Hide on click function | Complete |
-| Activate a time and the first question from start button | InProgress |
+| Activate a 60-sec timer and the first question from start button | InProgress |
 | Build multiple questions following the above process | Inprogress |
 | Incorrect answers to reduce Countdown timer | NA |
 | Game is over once the timer hits Zero (0) or if the questions are answered| NA |
 | Build a leaderboard for the user to add their initials  | NA |
 | Build a local storage to track on highscore board | NA |
-
+| Set Attributes from Lesson 05 from monday | NA |
 Pseudo Code: 
 
 ```
