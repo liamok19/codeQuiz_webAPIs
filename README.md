@@ -30,7 +30,7 @@ Acceptance Criteria:
 | Build HTML, CSS and JS      | Complete | 
 | Link above files to HTML | Complete |
 | Build start Button to begin Game. Hide on click function | Complete |
-| Activate a 60-sec timer and the first question from start button | InProgress |
+| Activate a 60-sec timer and the first question from start button | Complete |
 | Build multiple questions following the above process | Inprogress |
 | Incorrect answers to reduce Countdown timer | NA |
 | Game is over once the timer hits Zero (0) or if the questions are answered| NA |
