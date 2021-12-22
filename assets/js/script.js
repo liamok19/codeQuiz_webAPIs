@@ -2,7 +2,7 @@ var startButtonEl = document.getElementById('begin_btn');
 var quizContainerEl = document.getElementById ('coding-quiz-game');
 var highscoreEl = document.getElementById ('highscore');
 var timerEl = document.getElementById('timer');
-var count = 60;
+var count = 10;
 var theQuestionEl = document.getElementById('theQuestion');
 var currentQuestion = 0;
 var scoreTrack = 0;
@@ -29,7 +29,7 @@ var question = [
     },
     {
         question:"What isn't a song sung by Britney Spears?",
-        options:["Toxic", "Circus", "Whoopsy I did it", "Work Bitch"],
+        options:["a. Toxic", "b. Circus", "c. Whoopsy I did it", "d. Work Bitch"],
         correct: 2, 
     },
     {
@@ -51,7 +51,7 @@ function startTimer() {
         timerEl.textContent = count;
         count --;
 
-        if (count === 0) {
+        if (count <= 0) {
             endGame();
         }
 
@@ -127,7 +127,6 @@ function endGame ()  {
     clearInterval(timerInterval);
     results.textContent = scoreTrack;
     quizContainerEl.style.display = 'none';
-    nameHere();
     finalResults.style.display = 'block';
     
 }
@@ -140,8 +139,11 @@ function trackedScore () {
 
 function nameHere () {
     endGameInitials.value;
-    console.log(endGameInitials);
+    console.log(endGameInitials.value);
 }
+
+buttonInitial.addEventListener('click', nameHere)  
+
 //once first question has been chosen. Use click fucntion to load question2. 
 //if a question is wrong the timer reduces.
 

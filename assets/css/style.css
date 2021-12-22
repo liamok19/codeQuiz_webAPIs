@@ -92,3 +92,6 @@ header {
     border-color: #fce0438e ;
 }
 
+button {
+    background: radial-gradient(circle,#fb7ba186, #fce043bb 175%);
+}
