@@ -5,6 +5,12 @@ var timerEl = document.getElementById('timer');
 var count = 60;
 var theQuestionEl = document.getElementById('theQuestion');
 var currentQuestion = 0;
+var scoreTrack = 0;
+var results = document.getElementById('results');
+var timerInterval;
+var endGameInitials = document.getElementById('initialFinish');
+var buttonInitial = document.getElementById('pushme');
+var finalResults = document.getElementById('finalResults-container');
 
 var answer1El = document.getElementById('Answer_01');
 var answer2El = document.getElementById('Answer_02');
@@ -12,7 +18,7 @@ var answer3El = document.getElementById('Answer_03');
 var answer4El = document.getElementById('Answer_04');
 
 quizContainerEl.style.display = 'none';
-
+finalResults.style.display = 'none';
 //building the Question portion of the Quiz
 //building an array of questions using the object listed 'questions'
 var question = [
@@ -25,19 +31,28 @@ var question = [
         question:"What isn't a song sung by Britney Spears?",
         options:["Toxic", "Circus", "Whoopsy I did it", "Work Bitch"],
         correct: 2, 
-    }
+    },
+    {
+        question:"blajjj?",
+        options:["workk", "bitch", "Whoopsy I did it", "Work Bitch"],
+        correct: 1, 
+    },
+    {
+        question:"gay ",
+        options:["Toxic", "Circus", "Whoopsy I did it", "dadddddy"],
+        correct: 3, 
+    },
 ];
 
 
 function startTimer() {
 
-    var timerInterval = setInterval(function(){
+    timerInterval = setInterval(function(){
         timerEl.textContent = count;
         count --;
-        console.log('count');
 
         if (count === 0) {
-            clearInterval(timerInterval);
+            endGame();
         }
 
     }, 1000);
@@ -64,20 +79,27 @@ function answerLoading () {
 
         answer4El.textContent = var_options[3];
 
-            console.log(quizContainerEl);
-            console.log(answer1El);
-            console.log(answer2El);
-            console.log(answer3El);
-            console.log(answer4El);  
 }
 
 function answerValidation (guessedAnswer) {
     console.log('this one', question[currentQuestion])
     console.log('BBBB', guessedAnswer) 
-    if (question[currentQuestion].correct !== guessedAnswer) {
+    if (question[currentQuestion].correct === guessedAnswer) {
+        // ...
+        trackedScore();
+    } else { 
         count -= 10
+        
     }
     currentQuestion ++
+    if (question[currentQuestion]) {
+        // yay load the next one
+        answerLoading ();
+    } else {
+        // we're all done daddy 
+        endGame();
+    }
+    console.log('question[currentQuestion]', question[currentQuestion])
 }
 
 startButtonEl.addEventListener('click', function(){
@@ -101,10 +123,28 @@ answer4El.addEventListener ('click', function() {
 });
 
 
+function endGame ()  {
+    clearInterval(timerInterval);
+    results.textContent = scoreTrack;
+    quizContainerEl.style.display = 'none';
+    nameHere();
+    finalResults.style.display = 'block';
+    
+}
 
+function trackedScore () {
+    scoreTrack +=5;
+    console.log(scoreTrack);
+
+}
+
+function nameHere () {
+    endGameInitials.value;
+    console.log(endGameInitials);
+}
 //once first question has been chosen. Use click fucntion to load question2. 
 //if a question is wrong the timer reduces.
 
 
-//if Q !=correct[0] then --count by 20secs
+//if Q !=correct[0] then --count by 20sec
 //if Q==correct then update currentuestion to =1
