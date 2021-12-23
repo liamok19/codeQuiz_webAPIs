@@ -8,9 +8,14 @@ var currentQuestion = 0;
 var scoreTrack = 0;
 var results = document.getElementById('results');
 var timerInterval;
-var endGameInitials = document.getElementById('initialFinish');
-var buttonInitial = document.getElementById('pushme');
-var finalResults = document.getElementById('finalResults-container');
+
+//View highscore variables/consts. Score track is used aswell however, i have kept that seperate to this group below
+// var endGameInitials = document.getElementById('initialFinish');
+// var buttonInitial = document.getElementById('pushme');
+var finalContainer = document.getElementById('container');
+// const mostRecentScore = localStorage.getItem("mostRecentScore");
+// var highest_MaxScore = 5;
+//group above for highscore portion.
 
 var answer1El = document.getElementById('Answer_01');
 var answer2El = document.getElementById('Answer_02');
@@ -18,7 +23,7 @@ var answer3El = document.getElementById('Answer_03');
 var answer4El = document.getElementById('Answer_04');
 
 quizContainerEl.style.display = 'none';
-finalResults.style.display = 'none';
+finalContainer.style.display = 'none';
 //building the Question portion of the Quiz
 //building an array of questions using the object listed 'questions'
 var question = [
@@ -82,8 +87,6 @@ function answerLoading () {
 }
 
 function answerValidation (guessedAnswer) {
-    console.log('this one', question[currentQuestion])
-    console.log('BBBB', guessedAnswer) 
     if (question[currentQuestion].correct === guessedAnswer) {
         // ...
         trackedScore();
@@ -93,13 +96,12 @@ function answerValidation (guessedAnswer) {
     }
     currentQuestion ++
     if (question[currentQuestion]) {
-        // yay load the next one
+        // yay load the next one question.
         answerLoading ();
     } else {
-        // we're all done daddy 
+        // we're all done with brit brit 
         endGame();
     }
-    console.log('question[currentQuestion]', question[currentQuestion])
 }
 
 startButtonEl.addEventListener('click', function(){
@@ -127,7 +129,7 @@ function endGame ()  {
     clearInterval(timerInterval);
     results.textContent = scoreTrack;
     quizContainerEl.style.display = 'none';
-    finalResults.style.display = 'flex';
+    finalContainer.style.display = 'flex';
 
 }
 // function to track score. 1 correct answer equals 5 points. Triggered by the answerValidation.
@@ -137,29 +139,30 @@ function trackedScore () {
 
 }
 
-endGameInitials = JSON.parse(localStorage.getItem("highscores")) || [];
-console.log(endGameInitials);
-// var highest_MaxScore = 5;
-// // var finalScore =
 
-// endGameInitials.innerText = buttonInitial;
+// const highScore_Result = JSON.parse(localStorage.getItem("highScore_Result")) || [];
+
+
+// scoreTrack.innerText = mostRecentScore;
 
 // endGameInitials.addEventListener("keyup", () => { 
-//     buttonInitial.disabled = !buttonInitial.value;
+//     buttonInitial.disabled = !endGameInitials.value;
 // });
 
-// saveHighscore = e => {
-//     e.preventDefault();
+saveHighscore = e => {
+    console.log("hit me baby one more time")
+        e.preventDefault();
+};
 
-//     var score = {
+//     const score = {
 //         score: scoreTrack,
 //         name: endGameInitials.value
 //     };
-//     finalResults.push(score);
-//     finalResults.sort((a, b) => b.score = a.score);
-//     finalResults.splice(5);
+//     highScore_Result.push(score);
+//     highScore_Result.sort((a, b) => b.score = a.score);
+//     highScore_Result.splice(5);
 
-//     localStorage.setItem('finalResults', JSON.stringify(finalResults));
+//     localStorage.setItem('highScore_Result', JSON.stringify(highScore_Result));
 //     window.location.assign("/");
 
 // }
@@ -169,15 +172,21 @@ console.log(endGameInitials);
 
 
 
+// endGameInitials = JSON.parse(localStorage.getItem("endGameInitials")) || [];
 
 // function nameHere () {
 //     endGameInitials.value;
-//     console.log(endGameInitials.value);
-//     localStorage.setItem(endGameInitials);
+//     localStorage.setItem('endGameInitials',JSON.stringify(endGameInitials));
 
 // }
 
-// buttonInitial.addEventListener('click', nameHere)  
+// buttonInitial.addEventListener('click', nameHere); {
+// }  
+
+
+
+
+
 
 //once first question has been chosen. Use click fucntion to load question2. 
 //if a question is wrong the timer reduces.

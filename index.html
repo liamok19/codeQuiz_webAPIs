@@ -34,10 +34,31 @@
     <div>
         <div id="results"></div>
     </div>
-    <div id="finalResults-container">
+    <div id="container">
+        <div id="end" class="flex center flex-column">
+            <!-- <h1 id="finalScore">0</h1> -->
+            <form>
+                <input 
+                    type="text" 
+                    name="username" 
+                    id="username" 
+                    placeholder="username"
+                />
+                <button
+                    type="submit"
+                    class="btn"
+                    id="saveScoreBtn"
+                    onclick="saveHighScore(event)"
+                    disabled
+                > <strong> Hit Save!</strong> 
+                </button>
+            </form>
+        </div>
+    </div>
+    <!-- <div id="finalResults-container">
         <input id="initialFinish"></input>
         <button id="pushme"><strong>Save Initials!</strong></button>
-    </div>
+    </div> -->
 
     <script src="./assets/js/script.js"></script>
 </body>

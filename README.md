@@ -37,6 +37,8 @@ Acceptance Criteria:
 | Build a leaderboard for the user to add their initials  | Inprogress |
 | Build a local storage to track on highscore board | Inprogress |
 | Set Attributes from Lesson 05 from monday | Not required - NA |
+
+
 Pseudo Code: 
 
 ```
