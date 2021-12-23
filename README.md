@@ -4,13 +4,13 @@
 
 ```
 AS A Britney Enthusiast
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
+I WANT to take a timed quiz on the one and only Britney Jean Spears that stores high scores
+SO THAT I can gauge my over the top knowledge for the star
 ```
 
 Acceptance Criteria:
 ```
-- GIVEN I am taking a code quiz
+- GIVEN I am taking a Britney quiz
 - WHEN I click the start button
 - THEN a timer starts and I am presented with a question
 - WHEN I answer a question
@@ -44,7 +44,6 @@ Acceptance Criteria:
 | Game is over once the timer hits Zero (0) or if the questions are answered| Complete |
 | Prompt a input tag for the user to save their initials  | Complete |
 | Build a local storage to track the previous score | Complete |
-| Set Attributes from Lesson 05 from monday | Not required - NA |
 
 
 ## Pseudo Code
