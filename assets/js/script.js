@@ -2,7 +2,7 @@ var startButtonEl = document.getElementById('begin_btn');
 var quizContainerEl = document.getElementById ('coding-quiz-game');
 var highscoreEl = document.getElementById ('highscore');
 var timerEl = document.getElementById('timer');
-var count = 10;
+var count = 60;
 var theQuestionEl = document.getElementById('theQuestion');
 var currentQuestion = 0;
 var scoreTrack = 0;
@@ -29,18 +29,18 @@ var question = [
     },
     {
         question:"What isn't a song sung by Britney Spears?",
-        options:["a. Toxic", "b. Circus", "c. Whoopsy I did it", "d. Work Bitch"],
+        options:["Toxic", " Circus", "Whoopsy I did it", "Work Bitch"],
         correct: 2, 
     },
     {
-        question:"blajjj?",
-        options:["workk", "bitch", "Whoopsy I did it", "Work Bitch"],
-        correct: 1, 
+        question:"In the music video Gimme More, what is Britneys most prominent hair colour",
+        options:["Black", "No hair", "Red", "Blonde"],
+        correct: 0, 
     },
     {
-        question:"gay ",
-        options:["Toxic", "Circus", "Whoopsy I did it", "dadddddy"],
-        correct: 3, 
+        question:"In the 2012 hit Scream & Shout Britney featured in a song with what other artist",
+        options:["Jay-Z", "Rihanna", "Will.I.Am", "Fergie"],
+        correct: 2, 
     },
 ];
 
@@ -127,22 +127,57 @@ function endGame ()  {
     clearInterval(timerInterval);
     results.textContent = scoreTrack;
     quizContainerEl.style.display = 'none';
-    finalResults.style.display = 'block';
-    
-}
+    finalResults.style.display = 'flex';
 
+}
+// function to track score. 1 correct answer equals 5 points. Triggered by the answerValidation.
 function trackedScore () {
     scoreTrack +=5;
-    console.log(scoreTrack);
+    // console.log(scoreTrack);
 
 }
 
-function nameHere () {
-    endGameInitials.value;
-    console.log(endGameInitials.value);
-}
+endGameInitials = JSON.parse(localStorage.getItem("highscores")) || [];
+console.log(endGameInitials);
+// var highest_MaxScore = 5;
+// // var finalScore =
 
-buttonInitial.addEventListener('click', nameHere)  
+// endGameInitials.innerText = buttonInitial;
+
+// endGameInitials.addEventListener("keyup", () => { 
+//     buttonInitial.disabled = !buttonInitial.value;
+// });
+
+// saveHighscore = e => {
+//     e.preventDefault();
+
+//     var score = {
+//         score: scoreTrack,
+//         name: endGameInitials.value
+//     };
+//     finalResults.push(score);
+//     finalResults.sort((a, b) => b.score = a.score);
+//     finalResults.splice(5);
+
+//     localStorage.setItem('finalResults', JSON.stringify(finalResults));
+//     window.location.assign("/");
+
+// }
+
+
+
+
+
+
+
+// function nameHere () {
+//     endGameInitials.value;
+//     console.log(endGameInitials.value);
+//     localStorage.setItem(endGameInitials);
+
+// }
+
+// buttonInitial.addEventListener('click', nameHere)  
 
 //once first question has been chosen. Use click fucntion to load question2. 
 //if a question is wrong the timer reduces.
