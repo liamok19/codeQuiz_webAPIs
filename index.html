@@ -11,8 +11,9 @@
     <header><strong>Britney Spears Quiz Game noone asked for but now has!</strong></header>
     <section>
         <div class="gameHeadBoard">
-            <div> View Highscore
+            <div id="highScores" class="flex-center flex-column">
                 <span id="highscore"></span>
+                <ul id="highScoreList"></ul>
             </div>
             <div id="timer">Timer</div> 
         </div>
@@ -34,9 +35,10 @@
     <div>
         <div id="results"></div>
     </div>
-    <div id="container">
+    <!-- Local-Storage INP Option 1 -->
+        <div id="container">
         <div id="end" class="flex center flex-column">
-            <!-- <h1 id="finalScore">0</h1> -->
+            <h1 id="finalScore">Most Recent</h1>
             <form>
                 <input 
                     type="text" 
@@ -55,7 +57,8 @@
             </form>
         </div>
     </div>
-    <!-- <div id="finalResults-container">
+    <!-- Local-Storage INP Option 2
+    <div id="finalResults-container">
         <input id="initialFinish"></input>
         <button id="pushme"><strong>Save Initials!</strong></button>
     </div> -->

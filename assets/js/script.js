@@ -1,6 +1,6 @@
 var startButtonEl = document.getElementById('begin_btn');
 var quizContainerEl = document.getElementById ('coding-quiz-game');
-var highscoreEl = document.getElementById ('highscore');
+var highscoreEl = document.getElementById ('highScoreList');
 var timerEl = document.getElementById('timer');
 var count = 60;
 var theQuestionEl = document.getElementById('theQuestion');
@@ -13,9 +13,12 @@ var timerInterval;
 // var endGameInitials = document.getElementById('initialFinish');
 // var buttonInitial = document.getElementById('pushme');
 var finalContainer = document.getElementById('container');
-// const mostRecentScore = localStorage.getItem("mostRecentScore");
+var username = document.getElementById('username');
+var saveScoreBtn =document.getElementById('saveScoreBtn');
+const mostRecentScore = localStorage.getItem("mostRecentScore");
+const finalScore = document.getElementById("finalScore");
 // var highest_MaxScore = 5;
-//group above for highscore portion.
+//group above for localstorage portion.
 
 var answer1El = document.getElementById('Answer_01');
 var answer2El = document.getElementById('Answer_02');
@@ -24,6 +27,8 @@ var answer4El = document.getElementById('Answer_04');
 
 quizContainerEl.style.display = 'none';
 finalContainer.style.display = 'none';
+results.style.display = 'none';
+
 //building the Question portion of the Quiz
 //building an array of questions using the object listed 'questions'
 var question = [
@@ -101,6 +106,8 @@ function answerValidation (guessedAnswer) {
     } else {
         // we're all done with brit brit 
         endGame();
+        localStorage.setItem('mostRecentScore', scoreTrack);
+
     }
 }
 
@@ -124,14 +131,15 @@ answer4El.addEventListener ('click', function() {
     answerValidation(3);
 });
 
-
+//emd game to pause where the timer go to in the game. The score and the form containers will be visible and the quiz will hide. 
 function endGame ()  {
     clearInterval(timerInterval);
     results.textContent = scoreTrack;
     quizContainerEl.style.display = 'none';
     finalContainer.style.display = 'flex';
-
+    results.style.display = 'flex';
 }
+
 // function to track score. 1 correct answer equals 5 points. Triggered by the answerValidation.
 function trackedScore () {
     scoreTrack +=5;
@@ -140,57 +148,39 @@ function trackedScore () {
 }
 
 
-// const highScore_Result = JSON.parse(localStorage.getItem("highScore_Result")) || [];
-
-
-// scoreTrack.innerText = mostRecentScore;
-
-// endGameInitials.addEventListener("keyup", () => { 
-//     buttonInitial.disabled = !endGameInitials.value;
-// });
-
-saveHighscore = e => {
-    console.log("hit me baby one more time")
-        e.preventDefault();
-};
-
-//     const score = {
-//         score: scoreTrack,
-//         name: endGameInitials.value
-//     };
-//     highScore_Result.push(score);
-//     highScore_Result.sort((a, b) => b.score = a.score);
-//     highScore_Result.splice(5);
-
-//     localStorage.setItem('highScore_Result', JSON.stringify(highScore_Result));
-//     window.location.assign("/");
-
-// }
-
+// Option1 for localstorageHighScore
+const highScores= JSON.parse(localStorage.getItem("highScores")) || [];
+const MAX_HIGH_SCORES = 5;
+finalScore.textContent = 'Previous Score ' + mostRecentScore;
+//current fucntion for the save button is set to disabled unless the username field (form) has been filled out.
+username.addEventListener("keyup", () => { 
+    saveScoreBtn.disabled = !username.value;
+});
+saveHighscore = function (event) {
+    // console.log("hit me baby one more time");
+    event.prevenDefault (); 
+    const score = {
+        score: scoreTrack,
+        name: username.value
+    };
+    highScores.push(score);
+    highScores.sort((a, b) => b.score = a.score);
+    highScores.splice(5);
+    localStorage.setItem('highScores', JSON.stringify(highScores));
+};  
+var listof_scores = JSON.parse(localStorage.getItem('listof_scores')) || [];
+highScores.map ( score => {
+console.log('${score.username}-${score.score}');
+});
 
 
 
-
-
-// endGameInitials = JSON.parse(localStorage.getItem("endGameInitials")) || [];
-
+// Option2 for localstorageHighScore:
 // function nameHere () {
 //     endGameInitials.value;
 //     localStorage.setItem('endGameInitials',JSON.stringify(endGameInitials));
-
 // }
-
 // buttonInitial.addEventListener('click', nameHere); {
 // }  
 
 
-
-
-
-
-//once first question has been chosen. Use click fucntion to load question2. 
-//if a question is wrong the timer reduces.
-
-
-//if Q !=correct[0] then --count by 20sec
-//if Q==correct then update currentuestion to =1
