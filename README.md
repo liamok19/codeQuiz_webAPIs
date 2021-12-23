@@ -22,6 +22,14 @@ Acceptance Criteria:
 - WHEN the game is over
 - THEN I can save my initials and my score
 ```
+## Table of Contents
+- [Strategy](#strategy)
+- [Pseudo](#Pseudo)
+- [Assets](#assets)
+- [Links](#links)
+- [Credits](#credits)
+- [License](#license)
+
 
 ### State of Play - Strategy
 
@@ -34,13 +42,12 @@ Acceptance Criteria:
 | Build multiple questions following the above process | Complete |
 | Incorrect answers to reduce Countdown timer | Complete |
 | Game is over once the timer hits Zero (0) or if the questions are answered| Complete |
-| Build a leaderboard for the user to add their initials  | Inprogress |
-| Build a local storage to track on highscore board | Inprogress |
+| Prompt a input tag for the user to save their initials  | Complete |
+| Build a local storage to track the previous score | Complete |
 | Set Attributes from Lesson 05 from monday | Not required - NA |
 
 
-Pseudo Code: 
-
+## Pseudo Code
 ```
 HTML:
 1. Basic wireframe
@@ -63,3 +70,36 @@ JS:
 5. create click lisetn event to sue in strat/stop and for the leader baord 
 6. pulls question fromt he array and puts question in the ul and assign
 ```
+
+## Assets
+![itsbritbrit](./assets/images/britney_codequiz_lo.gif)
+
+
+## Links
+- Github link for reference is below: 
+https://github.com/liamok19/codeQuiz_webAPIs.git
+
+- Website Link for reference is below: 
+https://liamok19.github.io/codeQuiz_webAPIs/
+
+## Credits
+
+Based on the research I found the following sources that I would like to credit for this project: 
+| Source        | Platform      | Other  |
+| ------------- |:-------------:| -----:|
+| Web Dev Simplified    | Youtube      |Title: Build A Quiz App With JavaScript  | 
+| #ask your classmaters | Slack      |Conversations between instructors and classmates |
+| James Q Quick   | Youtube     | Title: Build a Quiz App (9) - Load and Display High Scores from Local Storage |
+| Coding Destination   | Youtube     | Title: Multiple Choice Quiz using HTML,CSS and JavaScript.|
+| JavaScript Academy  | Youtube      |Title: Create a simple tic tac toe game using HTML, CSS, JavaScript | 
+| Zenva    | Youtube   |Title: Creating a Basic Quiz - JavaScript Tutorial | 
+| The New Ninja    | Youtube   |Title: JavaScript ES6 Tutorial #5 - The Spread Operator| 
+| W3school    | W3school   |Title: https://www.w3schools.com/quiztest/quiztest.asp?qtest=JS | 
+| StackOverflow    | StackOverflow   |Title: https://stackoverflow.com/questions/4279611/how-to-embed-a-video-into-github-readme-md/4279746#4279746 | 
+| MDN Web Docs | MDN Web Docs | Title: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse | 
+
+
+
+
+## License
+- Existing projects and communities, this README file is publicly open for reference and review. 
