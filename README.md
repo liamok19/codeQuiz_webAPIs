@@ -1,5 +1,14 @@
 # codeQuiz_webAPIs
 
+## Links
+- Github link for reference is below: 
+https://github.com/liamok19/codeQuiz_webAPIs.git
+
+        Contact Information in the below link:
+
+- Website Link for reference is below: 
+https://liamok19.github.io/codeQuiz_webAPIs/
+
 ## User Story
 
 ```
@@ -26,7 +35,6 @@ Acceptance Criteria:
 - [Strategy](#strategy)
 - [Pseudo](#Pseudo)
 - [Assets](#assets)
-- [Links](#links)
 - [Credits](#credits)
 - [License](#license)
 
@@ -73,13 +81,11 @@ JS:
 ## Assets
 ![itsbritbrit](./assets/images/britney_codequiz_lo.gif)
 
-
-## Links
-- Github link for reference is below: 
-https://github.com/liamok19/codeQuiz_webAPIs.git
-
-- Website Link for reference is below: 
-https://liamok19.github.io/codeQuiz_webAPIs/
+## Technologies:
+- HTML 
+- CSS
+- JavaScript  
+- Github
 
 ## Credits
 
